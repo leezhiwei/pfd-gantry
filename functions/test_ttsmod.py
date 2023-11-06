@@ -2,10 +2,13 @@ from ttsmod import *
 import speech_recognition
 import pytest
 
+
 def test_speak():
     r = speech_recognition.Recognizer()
-    text = "Hello Name you are currently late you are supposed to start work at 9:15 a.m."
-    wavfile = speech(text, "high")
+    text = (
+        "Hello Name you are currently late you are supposed to start work at 9:15 a.m."
+    )
+    wavfile = speech(text)
     with speech_recognition.AudioFile(wavfile) as source:
         audio = r.record(source)
     try:
@@ -13,5 +16,3 @@ def test_speak():
         assert identify == text.lower()
     except Exception as e:
         pytest.fail(e)
-    
-    
