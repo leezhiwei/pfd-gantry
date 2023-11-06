@@ -5,6 +5,7 @@ making it a set quality. (high)
 Return an (wav) audio file path.
 pip install pydub
 pip install python-ffmpeg
+if it doesnt work try restarting (LOL)
 """
 import os
 from gtts import gTTS
