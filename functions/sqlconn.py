@@ -33,11 +33,11 @@ def connect(dbhostname: str, dbport: int,
                       f'Database={database};'
                       'Trusted_Connection=yes;')
         else:
-            conn = f'DRIVER={{ODBC Driver 18 for SQL Server}};
-                    SERVER={dbhostname};
-                    DATABASE={database};
-                    UID={username};
-                    PWD={password}'
+            conn = pyodbc.connect(f'DRIVER={{ODBC Driver 18 for SQL Server}};'
+                    f'SERVER={dbhostname};'
+                    f'DATABASE={database};'
+                    f'UID={username};'
+                    f'PWD={password}')
     except:
         conn = None
     return conn
@@ -82,6 +82,7 @@ def insertrows(conn : pyodbc.Connection, tablename : str, values: tuple, insertr
             columns = ', '.join(insertrows)
             placeholders = ', '.join(['?' for _ in range(len(insertrows))])
             sql_query = f"INSERT INTO {tablename} ({columns}) VALUES ({placeholders})"
+            print(sql_query)
         else:
             # if insertrows has no value
             columns = ', '.join([col[0] for col in cursor.columns(table=tablename)])
