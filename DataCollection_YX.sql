@@ -18,8 +18,8 @@ GO
 /*
 CREATE TABLE Shift(
   ShiftID int IDENTITY (1,1) NOT NULL,
-  ShiftIn datetime NOT NULL,
-  ShiftOut datetime NOT NULL,
+  ShiftIn time NOT NULL,
+  ShiftOut time NOT NULL,
   CONSTRAINT PK_Shift PRIMARY KEY (ShiftID)
 );
 GO
@@ -49,9 +49,9 @@ CREATE TABLE Record(
   CONSTRAINT FK_Record_EmployeeID FOREIGN KEY (EmployeeID)
   REFERENCES Employee(EmployeeID)
 );
+
 */
 
-/*
 insert into Shift(ShiftIn, ShiftOut) values ('9:00 AM', '5:03 PM');
 insert into Shift(ShiftIn, ShiftOut) values ('9:00 AM', '5:11 PM');
 
@@ -157,6 +157,5 @@ insert into Record (EmployeeID, RfidID, TimeIn, TimeOut) values (38, 649, '2023-
 insert into Record (EmployeeID, RfidID, TimeIn, TimeOut) values (44, 477, '2023-06-23 10:12:36', '2023-01-25 11:12:59');
 insert into Record (EmployeeID, RfidID, TimeIn, TimeOut) values (14, 304, '2023-07-22 01:44:11', '2022-12-18 22:27:56');
 
-*/
 
-SELECT * FROM Employee;
+SELECT * FROM Shift;
