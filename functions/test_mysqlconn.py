@@ -87,9 +87,7 @@ def deleterows(mydb : mysql.connector, tablename : str, filters : list = []):
     where_clause = " AND ".join(filters)
 
     # delete query 
-    sql_query = f"DELETE FROM {tablename} WHERE {where_clause
-                                                 
-                                                 }"
+    sql_query = f"DELETE FROM {tablename} WHERE {where_clause}"
     mycursor = mydb.cursor()
     mycursor.execute(sql_query)
     mycursor.commit()
@@ -109,4 +107,4 @@ def getmethod(url : str, arguments : str, cardID: str, querystring : list = []):
 # POST Method
 def postmethod(url: str, args: str, cardID : str, json : dict = {}):
     post = requests.post(url, json, cardID, args)
-    
+
