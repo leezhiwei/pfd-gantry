@@ -73,6 +73,7 @@ values is a nested tuple, like ((1,2,3), (4,5,6)) for (Col1, Col2, Col3)
 try except for those SQL errors. (not right columns etc), return a -1.
 if all goes well, return amt of rows affected
 '''
+# Nested tuple expected, so query should look like insertrows(conn, 'Employee', (("TestName", 1),), ["FullName","ShiftID"])
 def insertrows(conn : pyodbc.Connection, tablename : str, values: tuple, insertrows : list = []):
     try:
         cursor = conn.cursor()
@@ -82,17 +83,18 @@ def insertrows(conn : pyodbc.Connection, tablename : str, values: tuple, insertr
             columns = ', '.join(insertrows)
             placeholders = ', '.join(['?' for _ in range(len(insertrows))])
             sql_query = f"INSERT INTO {tablename} ({columns}) VALUES ({placeholders})"
-            print(sql_query)
+            #print(sql_query)
         else:
             # if insertrows has no value
             columns = ', '.join([col[0] for col in cursor.columns(table=tablename)])
             placeholders = ', '.join(['?' for _ in range(len(values[0]))])
             sql_query = f"INSERT INTO {tablename} ({columns}) VALUES ({placeholders})"
-
+            
         # insert query for each set of values
         rowcount = 0
         for val_set in values:
-            cursor.execute(sql_query, val_set)
+            
+            cursor.execute(sql_query, tuple(val_set))
             rowcount += cursor.rowcount
 
         # Commit the changes
