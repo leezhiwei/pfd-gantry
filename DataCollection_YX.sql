@@ -44,7 +44,7 @@ CREATE TABLE Employee(
 CREATE TABLE Record(
   RecordID int IDENTITY (1,1) NOT NULL,
   EmployeeID int NOT NULL,
-  TimeIn datetime NOT NULL,
+  TimeIn datetime NULL,
   TimeOut datetime NULL,
   CONSTRAINT PK_Record PRIMARY KEY (RecordID),
   CONSTRAINT FK_Record_EmployeeID FOREIGN KEY (EmployeeID)
