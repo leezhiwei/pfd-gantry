@@ -53,7 +53,7 @@ CREATE TABLE Record(
 );
 */
 
-/*
+
 --shift data
 insert into Shift (ShiftIn, ShiftOut) values ('8:29 AM', '5:50 PM');
 insert into Shift (ShiftIn, ShiftOut) values ('8:04 AM', '5:18 PM');
@@ -61,56 +61,57 @@ insert into Shift (ShiftIn, ShiftOut) values ('8:00 AM', '5:12 PM');
 
 
 --employee data 50 rows
-insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Randie Tripean', 3, 624, 13);
-insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Wren Jewess', 1, 82, 971);
-insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Beckie Jakubski', 1, 567, 629);
-insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Moreen Goodall', 1, 385, 535);
-insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Reina Dudman', 3, 216, 172);
-insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Jorge Lurriman', 1, 384, 276);
-insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Chanda Shekle', 2, 677, 460);
-insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Holly Hillaby', 2, 904, 314);
-insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Ania Jeary', 2, 33, 547);
-insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Rudy Cracknell', 2, 114, 788);
-insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Trstram Pickerell', 1, 245, 847);
-insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Inna Penhallurick', 2, 931, 801);
-insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Keene Duddle', 1, 14, 633);
-insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Darren Duddan', 3, 672, 616);
-insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Aurelia Witten', 2, 925, 730);
-insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Erv Martinez', 3, 99, 984);
-insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Anthiathia Marsham', 2, 406, 216);
-insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Kelbee Casajuana', 2, 145, 928);
-insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Rusty Mohun', 2, 264, 913);
-insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Leigha Cargill', 2, 272, 345);
-insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Flossie Creber', 2, 891, 101);
-insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Russell Parnell', 3, 331, 901);
-insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Nickola Gillow', 3, 120, 929);
-insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Aurelea Munden', 3, 297, 267);
-insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Con Tripon', 2, 275, 717);
-insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Vinny Dearle', 1, 541, 493);
-insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Renate Perks', 1, 607, 156);
-insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Sabina Denis', 2, 144, 413);
-insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Marge Pigott', 1, 775, 81);
-insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Jyoti Vasilov', 3, 978, 119);
-insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Ozzie Sparsholt', 2, 944, 261);
-insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Ruthie Tayler', 2, 748, 730);
-insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Dilly Archdeckne', 3, 486, 274);
-insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Phineas Nice', 3, 351, 449);
-insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Dotti Fine', 3, 710, 251);
-insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Loren Tiler', 2, 704, 409);
-insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Allina Sterzaker', 3, 924, 759);
-insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Hartwell Durdy', 1, 202, 810);
-insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Miran Chrippes', 1, 592, 788);
-insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Hew Thunderchief', 2, 563, 126);
-insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Gilly Mann', 3, 515, 364);
-insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Farrell Lettley', 1, 557, 468);
-insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Lexie Sey', 1, 757, 688);
-insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Shanon Prestland', 1, 645, 355);
-insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Tobie Leftley', 2, 306, 42);
-insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Petr Pyper', 2, 420, 586);
-insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Maggee Farnsworth', 2, 932, 671);
-insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Beitris Treagust', 2, 812, 889);
-insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Horten Brunotti', 1, 849, 844);
-insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Kordula Karolewski', 2, 861, 907);
+insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Zarah Wilne', 2, 1, 1);
+insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Lorna Romanini', 2, 2, 2);
+insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Cob Milson', 1, 3, 3);
+insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Basil Morot', 2, 4, 4);
+insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Dal O''Hara', 2, 5, 5);
+insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Milli Newbury', 2, 6, 6);
+insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Kipper Yule', 1, 7, 7);
+insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Aubrey Mebius', 2, 8, 8);
+insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Stevie Camden', 3, 9, 9);
+insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Ephrem Lougheed', 2, 10, 10);
+insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Hermione Adrianello', 2, 11, 11);
+insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Rubin Lanaway', 1, 12, 12);
+insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Waldo McCorkell', 3, 13, 13);
+insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Madelle Raper', 2, 14, 14);
+insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Rabbi Aldin', 1, 15, 15);
+insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Berni Clow', 3, 16, 16);
+insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Elianora Mant', 1, 17, 17);
+insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Shanon Wathey', 1, 18, 18);
+insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Ethel Haccleton', 2, 19, 19);
+insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Griff Tweedlie', 1, 20, 20);
+insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Mozelle Jeaneau', 1, 21, 21);
+insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Misti Abramino', 2, 22, 22);
+insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Angelico Slessar', 3, 23, 23);
+insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Viviene McGlade', 2, 24, 24);
+insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Izaak Jillins', 3, 25, 25);
+insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Maggi Goodnow', 1, 26, 26);
+insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Gretel Dilkes', 2, 27, 27);
+insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Tatum Jahnisch', 1, 28, 28);
+insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Kariotta Kimbley', 1, 29, 29);
+insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Emyle Cadge', 2, 30, 30);
+insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Binny Proudman', 3, 31, 31);
+insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Hermie Mioni', 1, 32, 32);
+insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Lilyan Jurewicz', 3, 33, 33);
+insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Sidoney Lovatt', 3, 34, 34);
+insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Shell Romaines', 2, 35, 35);
+insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Prissie Nussen', 2, 36, 36);
+insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Colet Bramsom', 1, 37, 37);
+insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Selia Pitrelli', 2, 38, 38);
+insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Marylee Adaway', 1, 39, 39);
+insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Timothy Graine', 1, 40, 40);
+insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Malina Obray', 1, 41, 41);
+insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Eden Fewkes', 3, 42, 42);
+insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Marcellus Warton', 3, 43, 43);
+insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Kori Grewes', 3, 44, 44);
+insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Ethyl Kmicicki', 1, 45, 45);
+insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Wernher Babar', 2, 46, 46);
+insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Noellyn Bellee', 3, 47, 47);
+insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Elmer Towson', 2, 48, 48);
+insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Torrin Clemmow', 3, 49, 49);
+insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Elsworth Wass', 3, 50, 50);
+
 
 
 --record data 70 rows
@@ -184,6 +185,6 @@ insert into Record (EmployeeID, TimeIn, TimeOut) values (30, '2022-12-10 19:31:4
 insert into Record (EmployeeID, TimeIn, TimeOut) values (12, '2023-09-27 21:20:17', '2023-03-19 16:51:25');
 insert into Record (EmployeeID, TimeIn, TimeOut) values (36, '2023-09-27 08:32:47', '2023-05-18 11:14:13');
 insert into Record (EmployeeID, TimeIn, TimeOut) values (19, '2023-02-19 20:41:23', '2023-05-31 00:07:09');
-*/
 
-SELECT * FROM Record;
+
+SELECT * FROM Employee;
