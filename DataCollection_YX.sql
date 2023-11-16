@@ -55,8 +55,10 @@ CREATE TABLE Record(
 
 /*
 --shift data
-insert into Shift(ShiftIn, ShiftOut) values ('9:00 AM', '5:03 PM');
-insert into Shift(ShiftIn, ShiftOut) values ('9:00 AM', '5:11 PM');
+insert into Shift (ShiftIn, ShiftOut) values ('8:29 AM', '5:50 PM');
+insert into Shift (ShiftIn, ShiftOut) values ('8:04 AM', '5:18 PM');
+insert into Shift (ShiftIn, ShiftOut) values ('8:00 AM', '5:12 PM');
+
 
 --employee data 50 rows
 insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Randie Tripean', 3, 624, 13);
@@ -184,4 +186,4 @@ insert into Record (EmployeeID, TimeIn, TimeOut) values (36, '2023-09-27 08:32:4
 insert into Record (EmployeeID, TimeIn, TimeOut) values (19, '2023-02-19 20:41:23', '2023-05-31 00:07:09');
 */
 
-SELECT * FROM Employee;
+SELECT * FROM Record;
