@@ -153,6 +153,7 @@ def add_shift(conn: pyodbc.Connection, datevalue1: datetime.datetime, datevalue2
     cursor = conn.cursor()
     cursor.execute(sql_query, (datevalue1, datevalue2))
     conn.commit()
+    print("Successfully inserted.")
 
     # Return the number of rows affected
     return cursor.rowcount, "record inserted"
@@ -162,6 +163,7 @@ def delete_shift(conn: pyodbc.Connection, intvalue3: int):
 
     cursor = conn.cursor()
     cursor.execute(sql_query, (intvalue3))
+    print("Successfully deleted.")
     return cursor.rowcount, "Record deleted"   
 
 def inputshift():
