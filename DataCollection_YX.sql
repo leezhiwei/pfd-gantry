@@ -1,33 +1,33 @@
---uncomment this section to create the database first
+-- Version 1.0 MSSQL
+-- Version 1.5 MySQL conversion
+-- uncomment this section to create the database first
 
-/*
-Create Database DataCollection_1
-GO
-*/
+DROP DATABASE IF EXISTS DataCollection_1;
+Create Database DataCollection_1;
 
---then comment the "create database" and uncomment use Datacollection to create the table below
---use Datacollection;
 
---drop table if exists Employee
---drop table if exists shift
---drop table if exists Record
+-- then comment the "create database" and uncomment use Datacollection to create the table below
+use Datacollection_1;
 
-Use Datacollection_1
-GO
+drop table if exists Employee;
+drop table if exists shift;
+drop table if exists Record;
 
-/*
+Use Datacollection_1;
+
+
+
 CREATE TABLE Shift(
-  ShiftID int IDENTITY (1,1) NOT NULL,
+  ShiftID int auto_increment NOT NULL,
   ShiftIn time NOT NULL,
   ShiftOut time NOT NULL,
   CONSTRAINT PK_Shift PRIMARY KEY (ShiftID)
 );
-GO
 
 
 
 CREATE TABLE Employee(
-  EmployeeID int IDENTITY (1,1) NOT NULL,
+  EmployeeID int AUTO_INCREMENT NOT NULL,
   FullName varchar(50) NOT NULL,
   ShiftID int NOT NULL,
   RfidID int NOT NULL UNIQUE,
@@ -39,28 +39,26 @@ CREATE TABLE Employee(
 );
 
 
---not splitting the names to make it easier
+-- not splitting the names to make it easier
 
 CREATE TABLE Record(
-  RecordID int IDENTITY (1,1) NOT NULL,
+  RecordID int AUTO_INCREMENT NOT NULL,
   EmployeeID int NOT NULL,
   TimeIn datetime NULL,
   TimeOut datetime NULL,
   CONSTRAINT PK_Record PRIMARY KEY (RecordID),
   CONSTRAINT FK_Record_EmployeeID FOREIGN KEY (EmployeeID)
-  REFERENCES Employee(EmployeeID),
-  
-);
-*/
+  REFERENCES Employee(EmployeeID));
 
 
---shift data
+
+-- shift data
 insert into Shift (ShiftIn, ShiftOut) values ('8:29 AM', '5:50 PM');
 insert into Shift (ShiftIn, ShiftOut) values ('8:04 AM', '5:18 PM');
 insert into Shift (ShiftIn, ShiftOut) values ('8:00 AM', '5:12 PM');
 
 
---employee data 50 rows
+-- employee data 50 rows
 insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Zarah Wilne', 2, 1, 1);
 insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Lorna Romanini', 2, 2, 2);
 insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Cob Milson', 1, 3, 3);
@@ -114,7 +112,7 @@ insert into Employee (FullName, ShiftID, RfidID, FaceID) values ('Elsworth Wass'
 
 
 
---record data 70 rows
+-- record data 70 rows
 insert into Record (EmployeeID, TimeIn, TimeOut) values (45, '2023-10-08 15:43:22', '2023-08-18 05:20:59');
 insert into Record (EmployeeID, TimeIn, TimeOut) values (41, '2023-05-01 05:51:12', '2023-06-13 11:08:42');
 insert into Record (EmployeeID, TimeIn, TimeOut) values (43, '2023-10-28 17:01:28', '2023-01-08 23:42:15');
