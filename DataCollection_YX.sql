@@ -5,7 +5,6 @@
 DROP DATABASE IF EXISTS DataCollection_1;
 Create Database DataCollection_1;
 
-
 -- then comment the "create database" and uncomment use Datacollection to create the table below
 use Datacollection_1;
 
@@ -50,7 +49,11 @@ CREATE TABLE Record(
   CONSTRAINT FK_Record_EmployeeID FOREIGN KEY (EmployeeID)
   REFERENCES Employee(EmployeeID));
 
-
+CREATE TABLE Login (CountID INT PRIMARY KEY AUTO_INCREMENT, 
+Email VARCHAR(100) UNIQUE NOT NULL, 
+Username VARCHAR(100) UNIQUE, 
+PassHash VARCHAR(500) UNIQUE,
+CHECK (NOT (Username IS NULL AND Email IS NULL)));
 
 -- shift data
 insert into Shift (ShiftIn, ShiftOut) values ('8:29 AM', '5:50 PM');
@@ -184,5 +187,4 @@ insert into Record (EmployeeID, TimeIn, TimeOut) values (12, '2023-09-27 21:20:1
 insert into Record (EmployeeID, TimeIn, TimeOut) values (36, '2023-09-27 08:32:47', '2023-05-18 11:14:13');
 insert into Record (EmployeeID, TimeIn, TimeOut) values (19, '2023-02-19 20:41:23', '2023-05-31 00:07:09');
 
-
-SELECT * FROM Employee;
+INSERT INTO Login (PassHash) VALUES (1111);
