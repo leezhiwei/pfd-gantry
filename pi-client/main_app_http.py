@@ -11,13 +11,8 @@ import requests
 #cur = con.cursor()
 reader = RFID(pin_irq = None, antenna_gain=7)
 hl = HuskyLensLibrary("I2C", "", address=0x32)
-sitename = "https://mainservlee8219.hopto.org"
-sslpath = True
+sitename = "http://192.168.211.28"
 def main():
-    fileloc = speech('Sound test, gantry active')
-    mixer.init()
-    mixer.music.load(fileloc)
-    mixer.music.play()
     print("In program")
     while True:
         entry = False
@@ -30,7 +25,8 @@ def main():
         except:
             continue
         #row = cur.execute("SELECT RfidID FROM Employee WHERE FaceID = ?", (ID, )).fetchone();
-        timereq = requests.post(f"{sitename}/api/retrievefromfaceid.php", data={"FaceID":ID}, verify=sslpath)
+        timereq = requests.post(f"{sitename}/api/retrievefromfaceid.php", data={"FaceID":ID})
+        print("Face Detected")
         try:
             data = timereq.json()
         except:
@@ -43,12 +39,13 @@ def main():
                 uid = reader.read_id(as_number = True)
                 if uid is not None:
                     rid = uid 
+                    print("GetRFID")
                 if RfidID == rid:
                     print("Matched")
                     EID = data[0]["EmployeeID"]
                     name = data[0]["FullName"]
                     try:
-                        r = requests.post(f"{sitename}/api/retrieverecordcount.php", data={"EmployeeID": EID}, verify=sslpath)
+                        r = requests.post(f"{sitename}/api/retrieverecordcount.php", data={"EmployeeID": EID})
                         rr = int(r.content)
                     except:
                         print("Cannot retrieve record count")
@@ -62,14 +59,14 @@ def main():
                         entry = True
                     #rt = cur.execute("SELECT ShiftIn, ShiftOut FROM Shift WHERE ShiftID = ?", (r[2], )).fetchone()
                     try:
-                        req = requests.post(f"{sitename}/api/getshift.php", data={"ShiftID":data[0]["ShiftID"]}, verify=sslpath)
+                        req = requests.post(f"{sitename}/api/getshift.php", data={"ShiftID":data[0]["ShiftID"]})
                         rt = req.json()
                     except:
                         print("Cannot get shift")
                         continue
                     try:
                         #check double entry
-                        req = requests.post(f"{sitename}/api/checkbytime.php", data={"EmployeeID": EID}, verify=sslpath)
+                        req = requests.post(f"{sitename}/api/checkbytime.php", data={"EmployeeID": EID})
                         doubleentry = int(req.content)
                     except:
                         print("Did not contact doubleentry endpoint correctly")
@@ -105,7 +102,7 @@ def main():
                         datasent.update({"EmployeeID": EID, "TimeOut": datetime.today().strftime("%Y-%m-%d %H:%M:%S")})
                     #cur.execute("INSERT INTO Record (EmployeeID, TimeIn) VALUES (?,?)", (EID, datetime.today().strftime("%I:%M %p")))
                     try:
-                        r = requests.post(f"{sitename}/api/senddata.php", json=datasent, verify=sslpath)
+                        r = requests.post(f"{sitename}/api/senddata.php", json=datasent)
                     except:
                         print("Did not send data successfully")
                         continue
