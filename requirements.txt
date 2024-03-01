@@ -1,3 +1,0 @@
-pyodbc
-pytest
-speechrecognition

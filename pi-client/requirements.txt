@@ -1,0 +1,4 @@
+pygame
+playsound
+requests
+pi-rc522
