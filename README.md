@@ -13,6 +13,6 @@ We used a combination of different types of software to get the whole solution w
 4. Linux (Gantry and Server end)
 5. [Python](./pi-client/) (For the gantry end software)
 6. [NGINX](./nginx-rules/) (routing main web traffic to the above PHP and ASP.NET)
-7. [Tableau](./tableau_workbook/) (for data analyst to decipher information) (not pictured above)
+7. [Tableau](./tableau_workbook/) (for data analyst to decipher information)
 ## More Information
 More information about this project can be found on weekly blog [here](https://leezhiwei.github.io/pfd-blog).
